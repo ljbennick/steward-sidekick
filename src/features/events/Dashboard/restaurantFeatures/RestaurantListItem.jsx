@@ -8,7 +8,7 @@ export default function RestaurantListItem({ restaurant }) {
       <Segment>
         <Item.Group>
           <Item>
-            <Item.Image size="tiny" circular src={restaurant.hostPhotoURL} />
+            <Item.Image size="tiny" circular src={restaurant.imageSource} />
             <Item.Content>
               <Item.Header content={restaurant.title} />
             </Item.Content>

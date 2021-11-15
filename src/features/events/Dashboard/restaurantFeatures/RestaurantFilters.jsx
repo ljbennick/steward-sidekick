@@ -1,6 +1,5 @@
 import React from "react";
 import { Menu, Header } from "semantic-ui-react";
-import Calendar from "react-calendar";
 
 export default function RestaurantFilters() {
   return (
@@ -9,10 +8,8 @@ export default function RestaurantFilters() {
         <Header icon="filter" attached color="teal" content="Filters" />
         <Menu.Item content="Popular" />
         <Menu.Item content="Best Rated" />
-        <Menu.Item content="Most Reviewed" />
+        <Menu.Item content="Price" />
       </Menu>
-      <Header icon="calendar" attached color="teal" content="Select date" />
-      <Calendar />
     </>
   );
 }
