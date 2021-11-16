@@ -22,16 +22,16 @@ export function dataFromSnapshot(snapshot) {
 }
 
 export function listenToRestaurantsFromFirestore() {
-  return db.collection("Restaurants");
+  return db.collection("restaurant");
 }
 
 export function listenToRestaurantFromFirestore(restaurantId) {
-  return db.collection("Restaurants").doc(restaurantId);
+  return db.collection("restaurant").doc(restaurantId);
 }
 
 //TODO possibly delete this || check what can be done
 export function addRestaurantToFirestore(restaurant) {
-  return db.collection("Restaurants").add({
+  return db.collection("restaurant").add({
     ...restaurant,
     hostedBy: "Jay",
     hostPhotoURL: "https://randomuser.me/api/portraits/men/20.jpg",
@@ -44,7 +44,7 @@ export function addRestaurantToFirestore(restaurant) {
 }
 
 export function updateRestaurantInFirestore(restaurant) {
-  return db.collection("restaurants").doc(restaurant.id).update(restaurant);
+  return db.collection("restaurant").doc(restaurant.id).update(restaurant);
 }
 
 export function setUserProfileData(user) {

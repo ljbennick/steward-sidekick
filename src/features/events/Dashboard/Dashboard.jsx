@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Grid } from "semantic-ui-react";
@@ -20,6 +20,32 @@ export default function EventDashboard() {
     deps: [dispatch],
   });
 
+  const [restaurantSorting, setRestaurantSorting] =
+    useState("rating-high-to-low");
+
+  const sortedRestaurants = restaurants.sort((a, b) => {
+    if (restaurantSorting === "rating-high-to-low") {
+      return a.rating < b.rating ? 1 : -1;
+    }
+
+    if (restaurantSorting === "rating-high-to-low") {
+      return a.rating < b.rating ? 1 : -1;
+    }
+
+    if (restaurantSorting === "rating-high-to-low") {
+      return a.rating > b.rating ? 1 : -1;
+    }
+
+    if (restaurantSorting === "price-high-to-low") {
+      return a.price < b.price ? 1 : -1;
+    }
+
+    if (restaurantSorting === "price-low-to-high") {
+      return a.price > b.price ? 1 : -1;
+    }
+    return 0;
+  });
+
   return (
     <Grid>
       <Grid.Column width={10}>
@@ -29,10 +55,10 @@ export default function EventDashboard() {
             <RestaurantListItemPlaceholder />
           </>
         )}
-        <RestaurantList restaurants={restaurants} />
+        <RestaurantList restaurants={sortedRestaurants} />
       </Grid.Column>
       <Grid.Column width={6}>
-        <RestaurantFilters />
+        <RestaurantFilters setRestaurantSorting={setRestaurantSorting} />
       </Grid.Column>
     </Grid>
   );

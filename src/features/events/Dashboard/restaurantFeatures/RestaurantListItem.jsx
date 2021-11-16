@@ -10,17 +10,19 @@ export default function RestaurantListItem({ restaurant }) {
           <Item>
             <Item.Image size="tiny" circular src={restaurant.imageSource} />
             <Item.Content>
-              <Item.Header content={restaurant.title} />
+              <Item.Header content={restaurant.name} />
             </Item.Content>
           </Item>
         </Item.Group>
       </Segment>
       <Segment>
         <span>
-          <Icon name="marker" /> {restaurant.venue.address}
+          <Icon name="marker" /> {restaurant.location}
         </span>
       </Segment>
       <Segment clearing>
+        <div>{restaurant.rating}</div>
+        <div>{restaurant.price}</div>
         <div>{restaurant.description}</div>
         <Button
           as={Link}
