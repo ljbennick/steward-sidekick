@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import authReducer from "../../features/auth/authReducer";
-import restaurantReducer from "../../features/events/restaurantReducer";
+import profileReducer from "../../features/pages/profile/profileReducer";
+import restaurantReducer from "../../features/pages/restaurantReducer";
 import asyncReducer from "../async/asyncReducer";
 import modalReducer from "../common/modals/modalReducer";
 
@@ -9,6 +10,7 @@ const rootReducer = combineReducers({
   modals: modalReducer,
   auth: authReducer,
   async: asyncReducer,
+  profile: profileReducer,
 });
 
 export default rootReducer;

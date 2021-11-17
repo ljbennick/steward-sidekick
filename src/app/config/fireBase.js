@@ -6,8 +6,10 @@ import "firebase/compat/database";
 import "firebase/compat/auth";
 import "firebase/compat/storage";
 
+const API_KEY = process.env.REACT_APP_FIREBASE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDCzXZBEBflzpClHh0XXdpQdiQeR67AasI",
+  apiKey: API_KEY,
   authDomain: "stewardsidekick.firebaseapp.com",
   projectId: "stewardsidekick",
   storageBucket: "stewardsidekick.appspot.com",

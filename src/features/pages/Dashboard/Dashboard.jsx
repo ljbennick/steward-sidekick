@@ -28,11 +28,7 @@ export default function EventDashboard() {
       return a.rating < b.rating ? 1 : -1;
     }
 
-    if (restaurantSorting === "rating-high-to-low") {
-      return a.rating < b.rating ? 1 : -1;
-    }
-
-    if (restaurantSorting === "rating-high-to-low") {
+    if (restaurantSorting === "rating-low-to-high") {
       return a.rating > b.rating ? 1 : -1;
     }
 

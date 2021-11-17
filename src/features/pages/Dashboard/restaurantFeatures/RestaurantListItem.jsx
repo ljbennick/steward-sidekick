@@ -3,15 +3,19 @@ import { Link } from "react-router-dom";
 import { Button, Icon, Item, Segment } from "semantic-ui-react";
 
 export default function RestaurantListItem({ restaurant }) {
+  const restaurantRating = "Rating: ";
+  const restPrice = "Price: ";
+  const restDescription = "Description: ";
+
   return (
     <Segment.Group>
       <Segment>
         <Item.Group>
           <Item>
-            <Item.Image size="tiny" circular src={restaurant.imageSource} />
             <Item.Content>
-              <Item.Header content={restaurant.name} />
+              <Item.Header size="large" content={restaurant.name} />
             </Item.Content>
+            <Item.Image size="small" circular src={restaurant.imageSource} />
           </Item>
         </Item.Group>
       </Segment>
@@ -21,9 +25,16 @@ export default function RestaurantListItem({ restaurant }) {
         </span>
       </Segment>
       <Segment clearing>
-        <div>{restaurant.rating}</div>
-        <div>{restaurant.price}</div>
-        <div>{restaurant.description}</div>
+        <div>
+          {restaurantRating} {restaurant.rating}
+        </div>
+        <div>
+          {restPrice} {restaurant.price}
+        </div>
+        <Segment>
+          <div style={{ fontSize: 15, color: "teal" }}>{restDescription}</div>
+          <div>{restaurant.description}</div>
+        </Segment>
         <Button
           as={Link}
           to={`/restaurants/${restaurant.id}`}

@@ -29,14 +29,14 @@ export default function SignedInMenu() {
         <Dropdown.Menu>
           <Dropdown.Item
             as={Link}
-            to="/hotels"
-            text="Hotels"
+            to={`/profile/${currentUser.uid}`}
+            text="My Profile"
+            icon="user"
           />
-          <Dropdown.Item text="My Profile" icon="user" />
           <Dropdown.Item
             as={Link}
             to="/account"
-            text="My Account"
+            text="Profile Settings"
             icon="settings"
           />
 

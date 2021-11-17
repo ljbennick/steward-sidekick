@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Segment, Image, Item, Header, Button } from "semantic-ui-react";
+import { Segment, Image, Item, Header } from "semantic-ui-react";
 
 const restaurantImageStyle = {
   filter: "brightness(30%)",
@@ -31,30 +30,13 @@ export default function RestaurantDetailedHeader({ restaurant }) {
               <Item.Content>
                 <Header
                   size="huge"
-                  content={restaurant.title}
+                  content={restaurant.name}
                   style={{ color: "white" }}
                 />
-                <p>
-                  Hosted by <strong>{restaurant.hostedBy}</strong>
-                </p>
               </Item.Content>
             </Item>
           </Item.Group>
         </Segment>
-      </Segment>
-
-      <Segment attached="bottom">
-        <Button>Cancel My Place</Button>
-        <Button color="teal">JOIN THIS EVENT</Button>
-
-        <Button
-          as={Link}
-          to={`/manage/${restaurant.id}`}
-          color="orange"
-          floated="right"
-        >
-          Manage Event
-        </Button>
       </Segment>
     </Segment.Group>
   );

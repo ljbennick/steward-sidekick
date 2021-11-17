@@ -20,7 +20,6 @@ export default function NavBar({ setFormOpen }) {
           Steward SideKick
         </Menu.Item>
         <Menu.Item as={NavLink} to="/restaurants" name="Restaurants" />
-        <Menu.Item as={NavLink} to="/hotels" name="Hotels"></Menu.Item>
         {authenticated ? <SignedInMenu /> : <SignedOutMenu />}
       </Container>
     </Menu>
